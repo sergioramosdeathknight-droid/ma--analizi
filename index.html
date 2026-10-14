@@ -60,11 +60,9 @@ code{font-family:var(--font-mono);font-size:.9em;padding:2px 6px;border-radius:v
 kbd{font-family:var(--font-mono);font-size:.8em;padding:3px 8px;border-radius:var(--r-xs);background:var(--yuzey-koyu-2);border:1px solid var(--kenar-2);border-bottom-width:2px;color:var(--metin-1);font-weight:600;display:inline-block;min-width:28px;text-align:center;}
 ::-webkit-scrollbar{width:10px;height:10px;}
 ::-webkit-scrollbar-thumb{background:rgba(124,77,255,.3);border-radius:var(--r-full);}
-::-webkit-scrollbar-thumb:hover{background:rgba(124,77,255,.5);}
 *{scrollbar-width:thin;scrollbar-color:rgba(124,77,255,.3) transparent;}
 .ikon{width:20px;height:20px;flex-shrink:0;display:inline-block;vertical-align:middle;fill:currentColor;}
 .ikon-kucuk{width:16px;height:16px;}
-.ikon-buyuk{width:28px;height:28px;}
 .toast-container{position:fixed;top:var(--s-6);right:var(--s-6);z-index:var(--z-toast);display:flex;flex-direction:column;gap:var(--s-3);max-width:380px;pointer-events:none;}
 html[data-cihaz="telefon"] .toast-container{top:var(--s-3);right:var(--s-3);left:var(--s-3);max-width:none;}
 html[data-cihaz="telefon"] .toast{min-width:0;}
@@ -91,7 +89,6 @@ html[data-cihaz="telefon"] .toast{min-width:0;}
 .modal{background:var(--renk-arkaplan-2);border:1px solid var(--kenar-2);border-radius:var(--r-2xl);box-shadow:var(--golge-2xl);width:100%;max-width:560px;max-height:90vh;display:flex;flex-direction:column;transform:scale(.92) translateY(20px);transition:transform var(--gecis-normal);overflow:hidden;}
 .modal-overlay.aktif .modal{transform:scale(1) translateY(0);}
 .modal-genis{max-width:800px;}
-.modal-dar{max-width:420px;}
 .modal-baslik{display:flex;align-items:center;justify-content:space-between;padding:var(--s-5) var(--s-6);border-bottom:1px solid var(--kenar-1);gap:var(--s-3);}
 .modal-baslik-sol{display:flex;align-items:center;gap:var(--s-3);flex:1;min-width:0;}
 .modal-ikon{font-size:1.5rem;line-height:1;flex-shrink:0;}
@@ -462,7 +459,6 @@ html[data-cihaz="telefon"] .oyuncu-listesi{grid-template-columns:1fr;}
 .sporcu-param-sayi{text-align:center;font-family:var(--font-mono);font-weight:700;font-size:var(--fs-sm);}
 .sporcu-param-sayi.bas{color:var(--yesil-parlak);}
 .sporcu-param-sayi.basarisiz{color:var(--kirmizi-parlak);}
-.sporcu-param-yuzde{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
 .sporcu-param-trend{text-align:center;font-size:var(--fs-xs);font-weight:700;padding:2px 6px;border-radius:var(--r-full);}
 .sporcu-param-trend.up{background:var(--yesil-soft);color:var(--yesil-parlak);}
 .sporcu-param-trend.down{background:var(--kirmizi-soft);color:var(--kirmizi-parlak);}
@@ -486,7 +482,6 @@ html[data-cihaz="telefon"] .sporcu-ozet-deger{font-size:var(--fs-2xl);}
 html[data-cihaz="telefon"] .sporcu-param-satir,
 html[data-cihaz="telefon"] .sporcu-param-tablo-basliklar{grid-template-columns:minmax(90px,1.4fr) minmax(50px,1fr) 42px 42px 60px;font-size:var(--fs-xs);}
 html[data-cihaz="telefon"] .sporcu-mac-satir{grid-template-columns:76px 1fr 46px 60px;font-size:var(--fs-xs);}
-/* PDF SEÇİM */
 .pdf-secim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:8px;}
 .pdf-secim-kart{display:flex;flex-direction:column;gap:8px;padding:16px;background:var(--yuzey-1);border:1px solid var(--kenar-1);border-radius:var(--r-lg);cursor:pointer;transition:var(--gecis-normal);text-align:left;font-family:var(--font-aile);position:relative;overflow:hidden;}
 .pdf-secim-kart::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--mor),var(--yesil));transform:scaleX(0);transform-origin:left;transition:transform var(--gecis-normal);}
@@ -503,7 +498,6 @@ html[data-cihaz="telefon"] .sporcu-mac-satir{grid-template-columns:76px 1fr 46px
 .pdf-secim-kart.pasif{opacity:.55;cursor:not-allowed;}
 .pdf-secim-kart.pasif:hover{transform:none;border-color:var(--kenar-1);box-shadow:none;}
 html[data-cihaz="telefon"] .pdf-secim-grid{grid-template-columns:1fr;}
-/* SPORCU PARAMETRE ATAMASI */
 .param-secim-bilgi{padding:10px 14px;background:var(--mavi-soft);border-left:3px solid var(--mavi);border-radius:var(--r-sm);font-size:var(--fs-xs);color:var(--metin-2);line-height:1.5;margin-bottom:12px;}
 .param-secim-baslik{display:flex;align-items:center;justify-content:space-between;margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--kenar-1);}
 .param-secim-baslik h5{font-size:var(--fs-sm);font-weight:800;color:var(--metin-2);text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
@@ -622,7 +616,7 @@ html[data-cihaz="telefon"] .param-secim-grid{grid-template-columns:1fr;max-heigh
       <h4>ℹ️ Hakkında</h4>
       <p class="ayar-aciklama">
         Maç Performans Analiz Sistemi<br>
-        <strong>Sürüm:</strong> <span id="ayarSurum">3.3.1</span><br>
+        <strong>Sürüm:</strong> <span id="ayarSurum">3.3.2</span><br>
         <strong>Cihaz:</strong> <span id="ayarCihaz">-</span><br>
         <strong>Depolama:</strong> <span id="ayarDepolama">localStorage</span><br>
         <strong>Toplam Kayıt:</strong> <span id="ayarKayitSayisi">0</span><br>
@@ -678,8 +672,8 @@ html[data-cihaz="telefon"] .param-secim-grid{grid-template-columns:1fr;max-heigh
         <li>Maç bitince Bitir → arşive kaydedilir</li>
       </ol>
     </section>
-    <section class="yardim-bolum"><h4>📊 Sporcu Veri Tabanı</h4><p>Sporcu seçip gelişim grafiğini görün, düzenleyin ve PDF rapor oluşturun.</p></section>
-    <section class="yardim-bolum"><h4>📄 PDF Rapor</h4><p>Header'daki PDF butonuyla 4 rapor: Aktif Maç, Tüm Maçlar, Sporcu, Takım.</p></section>
+    <section class="yardim-bolum"><h4>📊 Sporcu PDF Raporu</h4><p>İlk sayfa özet, sonraki sayfalar her maç için ayrı: parametre bazlı dakika grafiği + kayıt listesi.</p></section>
+    <section class="yardim-bolum"><h4>📚 Tüm Maçlar Raporu</h4><p>İlk sayfa özet + grafik, sonraki sayfalar her maç detayı (sporcu bazlı).</p></section>
     <section class="yardim-bolum"><h4>💾 Veri Saklama</h4><p>Tüm veriler tarayıcının <code>localStorage</code> alanında saklanır.</p></section>
   </div>
 </aside>
@@ -689,7 +683,7 @@ html[data-cihaz="telefon"] .param-secim-grid{grid-template-columns:1fr;max-heigh
 <section class="card kart-header">
   <div class="header-row">
     <div class="menu-satir">
-      <div class="header-sol"><span class="logo-mini">⚽</span><span class="baslik-mini">Maç Analiz</span><span class="surum-rozet">v3.3.1</span></div>
+      <div class="header-sol"><span class="logo-mini">⚽</span><span class="baslik-mini">Maç Analiz</span><span class="surum-rozet">v3.3.2</span></div>
       <div class="header-sag">
         <button class="ikon-btn" id="btnPdfRapor" title="PDF Raporları" type="button" style="background:linear-gradient(135deg,rgba(124,77,255,.2),rgba(0,230,118,.15));border-color:var(--mor);"><svg class="ikon"><use href="#ikon-pdf"/></svg></button>
         <button class="ikon-btn" id="btnYardim" title="Yardım" type="button"><svg class="ikon"><use href="#ikon-yardim"/></svg></button>
@@ -864,14 +858,13 @@ html[data-cihaz="telefon"] .param-secim-grid{grid-template-columns:1fr;max-heigh
   <header class="kart-baslik"><h3><span>❓</span><span>Sık Sorulan Sorular</span></h3></header>
   <details class="sss-item"><summary>Parametre Bankası nedir?</summary><p>Tüm parametrelerin toplandığı merkezi havuz.</p></details>
   <details class="sss-item"><summary>Sporcuya özel parametre nasıl atanır?</summary><p>Oyuncu Yönetimi → Düzenle → Parametre gridi açılır → seç.</p></details>
-  <details class="sss-item"><summary>Eski maçlar etkilenir mi?</summary><p>Hayır. Her maç başlarken parametreler snapshot olarak dondurulur.</p></details>
-  <details class="sss-item"><summary>PDF raporlarında ne var?</summary><p>4 rapor: Aktif Maç, Tüm Maçlar, Sporcu, Takım Performans.</p></details>
+  <details class="sss-item"><summary>PDF'te her maç ayrı sayfada mı?</summary><p>Evet. Sporcu PDF'i ve Tüm Maçlar PDF'i artık her maç için ayrı sayfa oluşturur.</p></details>
 </section>
 
 <footer class="app-footer">
   <p>
     <span>⚽</span> Maç Performans Analiz Sistemi © <span id="footerYil">2025</span>
-    <span>·</span><span class="footer-surum">v3.3.1</span>
+    <span>·</span><span class="footer-surum">v3.3.2</span>
     <span>·</span><button class="footer-link" id="footerVeriYonetimi" type="button">Veri Yönetimi</button>
     <span>·</span><button class="footer-link" id="footerKlavye" type="button">Kısayollar</button>
     <span>·</span><button class="footer-link" id="footerYardim" type="button">Yardım</button>
@@ -884,7 +877,7 @@ html[data-cihaz="telefon"] .param-secim-grid{grid-template-columns:1fr;max-heigh
 'use strict';
 (function(){
 
-var SURUM = '3.3.1';
+var SURUM = '3.3.2';
 var KEYS = {MACLAR:'mpa3_maclar',PARAMETRELER:'mpa3_parametreler',MEVCUT_MAC:'mpa3_mevcutMac',AYARLAR:'mpa3_ayarlar',OYUNCULAR:'mpa3_oyuncular',SABLONLAR:'mpa3_sablonlar'};
 var VARSAYILAN_PARAMETRELER = [
   {ad:'İkili Mücadele',tip:'olumlu',renk:'#00e676'},{ad:'Pas İsabeti',tip:'olumlu',renk:'#00e676'},
@@ -923,7 +916,6 @@ var util = {
   macAra:function(mac,sorgu){if(!sorgu) return true;var q = sorgu.toLowerCase();if((mac.isim||'').toLowerCase().indexOf(q)!==-1) return true;if((mac.rakip||'').toLowerCase().indexOf(q)!==-1) return true;if((mac.oyuncu||'').toLowerCase().indexOf(q)!==-1) return true;return false;}
 };
 
-/* Aktif parametre seti (snapshot > sporcu özel > genel) */
 function aktifParametreler(){
   if(state.mevcutMac && state.mevcutMac.parametreSnapshot && state.mevcutMac.parametreSnapshot.length){return state.mevcutMac.parametreSnapshot;}
   if(state.mevcutMac && state.mevcutMac.oyuncu){
@@ -1427,6 +1419,9 @@ var klavye = {
   kartToggle:function(zorla){var kart = $('#kartKlavye');if(!kart) return;var yeni = typeof zorla==='boolean'?zorla:kart.hidden;kart.hidden = !yeni;if(yeni) kart.scrollIntoView({behavior:'smooth',block:'start'});}
 };
 
+/* ============================================================================
+   GRAFİK MOTORU
+   ============================================================================ */
 var grafik = {
   RENKLER:['#7c4dff','#00e676','#ffab40','#448aff','#ff5252','#ffd740','#e91e63','#00bcd4','#69f0ae','#b388ff'],
   ciz:function(canvas, veri, secenek){
@@ -1450,9 +1445,108 @@ var grafik = {
     ctx.strokeStyle = 'rgba(255,255,255,0.2)';ctx.lineWidth = 1.5;
     ctx.beginPath();ctx.moveTo(pad.left, pad.top);ctx.lineTo(pad.left, pad.top+ch);ctx.lineTo(pad.left+cw, pad.top+ch);ctx.stroke();
   },
-  dataURL:function(veri, secenek, W, H){W = W||800;H = H||340;var canvas = document.createElement('canvas');var DPR = 2;canvas.width = W*DPR;canvas.height = H*DPR;secenek = Object.assign({},secenek,{dpr:DPR});this.ciz(canvas, veri, secenek);return canvas.toDataURL('image/png');}
+  dataURL:function(veri, secenek, W, H){W = W||800;H = H||340;var canvas = document.createElement('canvas');var DPR = 2;canvas.width = W*DPR;canvas.height = H*DPR;secenek = Object.assign({},secenek,{dpr:DPR});this.ciz(canvas, veri, secenek);return canvas.toDataURL('image/png');},
+  /* ⬇ YENİ: Tek parametre için dakika bazlı zaman serisi çizimi (sporcu PDF sayfaları için) */
+  zamanSerisiCiz:function(kayitlar, secenek){
+    secenek = secenek||{};
+    var W = secenek.genislik || 700;
+    var H = secenek.yukseklik || 110;
+    var DPR = 2;
+    var canvas = document.createElement('canvas');
+    canvas.width = W*DPR; canvas.height = H*DPR;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(DPR,DPR);
+
+    var pad = {top:16, right:16, bottom:22, left:34};
+    var cw = W - pad.left - pad.right;
+    var ch = H - pad.top - pad.bottom;
+
+    // Arka plan
+    ctx.fillStyle = '#fafafa';
+    ctx.fillRect(0,0,W,H);
+
+    // Yatay grid (0%, 50%, 100%)
+    ctx.strokeStyle = '#e0e0e0';
+    ctx.lineWidth = 1;
+    [0, 50, 100].forEach(function(pct){
+      var y = pad.top + ch - (ch*pct/100);
+      ctx.beginPath();
+      ctx.moveTo(pad.left, y);
+      ctx.lineTo(pad.left+cw, y);
+      ctx.stroke();
+    });
+
+    // Y ekseni etiketleri
+    ctx.fillStyle = '#999';
+    ctx.font = '9px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('100%', pad.left-4, pad.top+3);
+    ctx.fillText('50%', pad.left-4, pad.top+ch/2+3);
+    ctx.fillText('0%', pad.left-4, pad.top+ch+3);
+
+    if(!kayitlar.length) return canvas.toDataURL('image/png');
+
+    var maxSaniye = Math.max.apply(null, kayitlar.map(function(k){return k.saniye||0;}));
+    if(maxSaniye < 60) maxSaniye = 60;
+
+    // X ekseni etiketleri (dakika)
+    var toplamDk = Math.ceil(maxSaniye/60);
+    var adim = Math.max(5, Math.ceil(toplamDk/8));
+    ctx.fillStyle = '#999';
+    ctx.textAlign = 'center';
+    for(var d=0; d<=toplamDk; d+=adim){
+      var x = pad.left + (d*60/maxSaniye)*cw;
+      ctx.fillText(d+"'", x, H-6);
+      ctx.strokeStyle = 'rgba(0,0,0,0.04)';
+      ctx.beginPath();
+      ctx.moveTo(x, pad.top);
+      ctx.lineTo(x, pad.top+ch);
+      ctx.stroke();
+    }
+
+    // Kayıtları sırala
+    var sirali = kayitlar.slice().sort(function(a,b){return (a.saniye||0)-(b.saniye||0);});
+    var renk = secenek.renk || '#7c4dff';
+
+    // Bağlantı çizgisi (soluk)
+    ctx.strokeStyle = renk;
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = 0.25;
+    ctx.beginPath();
+    sirali.forEach(function(k, i){
+      var x = pad.left + ((k.saniye||0)/maxSaniye)*cw;
+      var y = pad.top + ch - (ch*(k.basarili?100:0)/100);
+      if(i===0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    // Noktalar
+    sirali.forEach(function(k){
+      var x = pad.left + ((k.saniye||0)/maxSaniye)*cw;
+      var y = pad.top + ch - (ch*(k.basarili?100:0)/100);
+      // Dış halka
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI*2);
+      ctx.fillStyle = k.basarili ? 'rgba(0,168,84,.15)' : 'rgba(213,0,0,.15)';
+      ctx.fill();
+      // İç nokta
+      ctx.beginPath();
+      ctx.arc(x, y, 3.5, 0, Math.PI*2);
+      ctx.fillStyle = k.basarili ? '#00a854' : '#d50000';
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    });
+
+    return canvas.toDataURL('image/png');
+  }
 };
 
+/* ============================================================================
+   SPORCU VERİ TABANI
+   ============================================================================ */
 var sporcuVeri = {
   secili:'', donem:'tum',
   sporculariYukle:function(){
@@ -1555,6 +1649,9 @@ var sporcuVeri = {
   }
 };
 
+/* ============================================================================
+   PDF RAPOR MODÜLÜ
+   ============================================================================ */
 var pdfRapor = {
   menuAc:function(){
     var macVar = state.mevcutMac.kayitlar.length > 0;
@@ -1563,8 +1660,8 @@ var pdfRapor = {
     var html = '<p style="margin-bottom:16px;font-size:var(--fs-sm);color:var(--metin-3);">Oluşturmak istediğiniz raporu seçin. Yazdırma penceresinden <strong>"PDF olarak kaydet"</strong> seçin.</p>';
     html += '<div class="pdf-secim-grid">';
     html += '<button type="button" class="pdf-secim-kart '+(macVar?'':'pasif')+'" '+(macVar?'data-pdf-tip="aktifMac"':'disabled')+'><div class="pdf-ikon mor">📋</div><div class="pdf-baslik">Aktif Maç Raporu</div><div class="pdf-aciklama">Şu anki maçın tüm detayları, parametre grafiği ve sporcu performansları.</div>'+(macVar?'<span class="pdf-rozet">'+state.mevcutMac.kayitlar.length+' KAYIT</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">BOŞ</span>')+'</button>';
-    html += '<button type="button" class="pdf-secim-kart '+(arsivVar?'':'pasif')+'" '+(arsivVar?'data-pdf-tip="tumMaclar"':'disabled')+'><div class="pdf-ikon yesil">📚</div><div class="pdf-baslik">Tüm Maçlar Raporu</div><div class="pdf-aciklama">Arşivdeki tüm maçların özeti, genel istatistikler ve takım gruplu sporcu tablosu.</div>'+(arsivVar?'<span class="pdf-rozet">'+state.maclar.length+' MAÇ</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">BOŞ</span>')+'</button>';
-    html += '<button type="button" class="pdf-secim-kart '+(sporcuVar?'':'pasif')+'" '+(sporcuVar?'data-pdf-tip="sporcu"':'disabled')+'><div class="pdf-ikon turuncu">👤</div><div class="pdf-baslik">Sporcu Raporu</div><div class="pdf-aciklama">Tek bir sporcunun gelişim grafiği, parametre analizi ve maç geçmişi.</div>'+(sporcuVar?'<span class="pdf-rozet">SPORCU SEÇ</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">YOK</span>')+'</button>';
+    html += '<button type="button" class="pdf-secim-kart '+(arsivVar?'':'pasif')+'" '+(arsivVar?'data-pdf-tip="tumMaclar"':'disabled')+'><div class="pdf-ikon yesil">📚</div><div class="pdf-baslik">Tüm Maçlar Raporu</div><div class="pdf-aciklama">Arşivdeki tüm maçların özeti, sporcu tablosu ve <strong>her maç için ayrı detay sayfası</strong>.</div>'+(arsivVar?'<span class="pdf-rozet">'+state.maclar.length+' MAÇ</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">BOŞ</span>')+'</button>';
+    html += '<button type="button" class="pdf-secim-kart '+(sporcuVar?'':'pasif')+'" '+(sporcuVar?'data-pdf-tip="sporcu"':'disabled')+'><div class="pdf-ikon turuncu">👤</div><div class="pdf-baslik">Sporcu Raporu</div><div class="pdf-aciklama">Sporcu gelişim özeti + <strong>her maç için ayrı sayfa</strong> (dakika bazlı parametre grafikleri).</div>'+(sporcuVar?'<span class="pdf-rozet">SPORCU SEÇ</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">YOK</span>')+'</button>';
     html += '<button type="button" class="pdf-secim-kart '+(sporcuVar?'':'pasif')+'" '+(sporcuVar?'data-pdf-tip="takim"':'disabled')+'><div class="pdf-ikon mavi">🏆</div><div class="pdf-baslik">Takım Performans Raporu</div><div class="pdf-aciklama">Tüm sporcuların takımlara göre karşılaştırmalı analizi.</div>'+(sporcuVar?'<span class="pdf-rozet">KARŞILAŞTIR</span>':'<span class="pdf-rozet" style="background:var(--yuzey-2);color:var(--metin-5);">YOK</span>')+'</button>';
     html += '</div>';
     modal.ac({baslik:'PDF Rapor Oluştur', ikon:'📄', icerik:html, genislik:'genis', butonlar:[{metin:'Kapat',sinif:'btn-temizle'}]});
@@ -1596,6 +1693,290 @@ var pdfRapor = {
     var html = this.pdfCerceve('Aktif Maç Raporu', mac, r, grafikImg, grafikVeri, tarih);
     this.acPencere(html);
   },
+  /* ⬇⬇⬇ YENİ: Sporcu PDF için maç detay sayfası ⬇⬇⬇ */
+  macSayfasiOlustur:function(mv, macNo, oyuncuAd){
+    var m = mv.mac;
+    var kayitlar = (m.kayitlar||[]).filter(function(k){
+      return k.tip !== 'not' && k.oyuncu === oyuncuAd;
+    });
+    if(!kayitlar.length) return '';
+
+    var paramMap = {};
+    kayitlar.forEach(function(k){
+      if(!paramMap[k.parametre]) paramMap[k.parametre] = [];
+      paramMap[k.parametre].push(k);
+    });
+
+    var macTarih = util.tarihFormatla(m.tarih || m.olusturmaTarihi);
+    var macIsim = util.guvenliMetin(m.isim || 'İsimsiz');
+    var rakipIsim = m.rakip ? util.guvenliMetin(m.rakip) : '';
+
+    var toplam = kayitlar.length;
+    var basarili = kayitlar.filter(function(k){return k.basarili;}).length;
+    var yuzde = toplam ? Math.round(basarili/toplam*100) : 0;
+
+    var html = '';
+    html += '<div style="page-break-before:always;"></div>';
+    html += '<div class="page">';
+
+    html += '<div class="header">'+
+      '<div class="header-logo">'+
+        '<div class="logo" style="background:linear-gradient(135deg,#7c4dff,#4a2eb3);">'+macNo+'</div>'+
+        '<div>'+
+          '<div class="header-baslik">'+macIsim+'</div>'+
+          '<div class="header-alt">'+macTarih+(rakipIsim?' · vs '+rakipIsim:'')+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="text-align:right;">'+
+        '<div class="header-tarih">'+macTarih+'</div>'+
+        '<div class="header-tarih">'+toplam+' pozisyon · %'+yuzde+' verimlilik</div>'+
+      '</div>'+
+    '</div>';
+
+    html += '<div class="ozet" style="grid-template-columns:repeat(3,1fr);">'+
+      '<div class="ozet-kart"><div class="ozet-etiket">Toplam Pozisyon</div><div class="ozet-deger">'+toplam+'</div><div class="ozet-alt">bu maçta</div></div>'+
+      '<div class="ozet-kart"><div class="ozet-etiket">Başarılı</div><div class="ozet-deger" style="color:#00a854;">'+basarili+'</div><div class="ozet-alt">başarılı</div></div>'+
+      '<div class="ozet-kart yesil"><div class="ozet-etiket">Verimlilik</div><div class="ozet-deger yesil">%'+yuzde+'</div><div class="ozet-alt">bu maçta</div></div>'+
+    '</div>';
+
+    var paramSirali = Object.keys(paramMap).sort(function(a,b){
+      return paramMap[b].length - paramMap[a].length;
+    });
+
+    html += '<div class="bolum-baslik"><span>📊 Dakika Bazlı Parametre Analizi</span><span class="bolum-baslik-alt">'+paramSirali.length+' parametre</span></div>';
+
+    paramSirali.forEach(function(paramAdi){
+      var pk = paramMap[paramAdi].slice().sort(function(a,b){return (a.saniye||0)-(b.saniye||0);});
+      var pToplam = pk.length;
+      var pBasarili = pk.filter(function(k){return k.basarili;}).length;
+      var pYuzde = pToplam ? Math.round(pBasarili/pToplam*100) : 0;
+      var pYuzdeRenk = pYuzde>=70?'#00a854':pYuzde>=50?'#ff9100':'#d50000';
+      var pRenk = '#7c4dff';
+      var pc = state.parametreler.filter(function(x){return x.ad === paramAdi;})[0];
+      if(pc && pc.renk) pRenk = pc.renk;
+
+      var grafikImg = grafik.zamanSerisiCiz(pk, {renk: pRenk, genislik: 700, yukseklik: 110});
+
+      var listeHTML = pk.map(function(k){
+        var ikon = k.basarili ? '✓' : '✗';
+        var ikonRenk = k.basarili ? '#00a854' : '#d50000';
+        var notStr = k.not ? ' · <span style="color:#888;font-style:italic;">'+util.guvenliMetin(k.not)+'</span>' : '';
+        return '<span style="display:inline-block;padding:2px 9px;margin:2px 4px 2px 0;background:#f5f5ff;border:1px solid #e0d9ff;border-radius:12px;font-size:10px;font-weight:600;color:#444;">'+
+          '<strong style="color:#7c4dff;">'+k.zaman+'</strong> '+
+          '<span style="color:'+ikonRenk+';font-weight:900;">'+ikon+'</span>'+
+          notStr+
+        '</span>';
+      }).join('');
+
+      html += '<div style="margin-bottom:14px;padding:12px;background:#fff;border:1px solid #e0d9ff;border-radius:8px;page-break-inside:avoid;">'+
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px;">'+
+          '<div style="display:flex;align-items:center;gap:8px;">'+
+            '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+pRenk+';"></span>'+
+            '<strong style="font-size:12px;color:#12102a;">'+util.guvenliMetin(paramAdi)+'</strong>'+
+          '</div>'+
+          '<div style="font-size:10px;color:#666;">'+
+            '<strong style="color:#12102a;">'+pBasarili+'/'+pToplam+'</strong> pozisyon · '+
+            '<span style="color:'+pYuzdeRenk+';font-weight:800;">%'+pYuzde+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<img src="'+grafikImg+'" style="width:100%;display:block;margin-bottom:6px;border-radius:4px;border:1px solid #f0f0f0;">'+
+        '<div style="line-height:1.7;">'+listeHTML+'</div>'+
+      '</div>';
+    });
+
+    html += '</div>';
+    return html;
+  },
+  /* ⬇⬇⬇ YENİ: Tüm Maçlar raporu için maç detay sayfası (tüm sporcular) ⬇⬇⬇ */
+  macDetayTumSayfasi:function(mac, macNo){
+    var tumKayitlar = (mac.kayitlar||[]).filter(function(k){return k.tip !== 'not';});
+    if(!tumKayitlar.length) return '';
+
+    var macTarih = util.tarihFormatla(mac.tarih || mac.olusturmaTarihi);
+    var macIsim = util.guvenliMetin(mac.isim || 'İsimsiz');
+    var rakipIsim = mac.rakip ? util.guvenliMetin(mac.rakip) : '';
+
+    var toplam = tumKayitlar.length;
+    var basarili = tumKayitlar.filter(function(k){return k.basarili;}).length;
+    var yuzde = toplam ? Math.round(basarili/toplam*100) : 0;
+
+    // Sporcu bazlı grupla
+    var sporcuMap = {};
+    var sporcuSuzMap = {};
+    tumKayitlar.forEach(function(k){
+      if(k.oyuncu){
+        if(!sporcuMap[k.oyuncu]) sporcuMap[k.oyuncu] = [];
+        sporcuMap[k.oyuncu].push(k);
+      } else {
+        if(!sporcuSuzMap['__genel__']) sporcuSuzMap['__genel__'] = [];
+        sporcuSuzMap['__genel__'].push(k);
+      }
+    });
+
+    // Genel parametre özeti (tüm sporcular dahil)
+    var tumParamMap = {};
+    tumKayitlar.forEach(function(k){
+      if(!tumParamMap[k.parametre]) tumParamMap[k.parametre] = {toplam:0,basarili:0,kayitlar:[]};
+      tumParamMap[k.parametre].toplam++;
+      if(k.basarili) tumParamMap[k.parametre].basarili++;
+      tumParamMap[k.parametre].kayitlar.push(k);
+    });
+
+    var html = '';
+    html += '<div style="page-break-before:always;"></div>';
+    html += '<div class="page">';
+
+    html += '<div class="header">'+
+      '<div class="header-logo">'+
+        '<div class="logo" style="background:linear-gradient(135deg,#00a854,#00c853);">'+macNo+'</div>'+
+        '<div>'+
+          '<div class="header-baslik">'+macIsim+'</div>'+
+          '<div class="header-alt">'+macTarih+(rakipIsim?' · vs '+rakipIsim:'')+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="text-align:right;">'+
+        '<div class="header-tarih">'+macTarih+'</div>'+
+        '<div class="header-tarih">'+toplam+' pozisyon · %'+yuzde+' verimlilik</div>'+
+      '</div>'+
+    '</div>';
+
+    html += '<div class="ozet" style="grid-template-columns:repeat(4,1fr);">'+
+      '<div class="ozet-kart"><div class="ozet-etiket">Toplam Pozisyon</div><div class="ozet-deger">'+toplam+'</div><div class="ozet-alt">bu maçta</div></div>'+
+      '<div class="ozet-kart"><div class="ozet-etiket">Başarılı</div><div class="ozet-deger" style="color:#00a854;">'+basarili+'</div><div class="ozet-alt">başarılı</div></div>'+
+      '<div class="ozet-kart"><div class="ozet-etiket">Başarısız</div><div class="ozet-deger" style="color:#d50000;">'+(toplam-basarili)+'</div><div class="ozet-alt">başarısız</div></div>'+
+      '<div class="ozet-kart yesil"><div class="ozet-etiket">Verimlilik</div><div class="ozet-deger yesil">%'+yuzde+'</div><div class="ozet-alt">bu maçta</div></div>'+
+    '</div>';
+
+    // Parametre bazlı genel bakış
+    var paramSirali = Object.keys(tumParamMap).sort(function(a,b){
+      return tumParamMap[b].toplam - tumParamMap[a].toplam;
+    });
+
+    html += '<div class="bolum-baslik"><span>📊 Parametre Bazlı Dağılım</span><span class="bolum-baslik-alt">'+paramSirali.length+' parametre</span></div>';
+
+    paramSirali.forEach(function(paramAdi){
+      var pd = tumParamMap[paramAdi];
+      var pYuzde = pd.toplam ? Math.round(pd.basarili/pd.toplam*100) : 0;
+      var pYuzdeRenk = pYuzde>=70?'#00a854':pYuzde>=50?'#ff9100':'#d50000';
+      var pRenk = '#7c4dff';
+      var pc = state.parametreler.filter(function(x){return x.ad === paramAdi;})[0];
+      if(pc && pc.renk) pRenk = pc.renk;
+
+      var pk = pd.kayitlar.slice().sort(function(a,b){return (a.saniye||0)-(b.saniye||0);});
+      var grafikImg = grafik.zamanSerisiCiz(pk, {renk: pRenk, genislik: 700, yukseklik: 110});
+
+      var listeHTML = pk.map(function(k){
+        var ikon = k.basarili ? '✓' : '✗';
+        var ikonRenk = k.basarili ? '#00a854' : '#d50000';
+        var oyStr = k.oyuncu ? '<span style="color:#7c4dff;font-weight:700;">['+util.guvenliMetin(k.oyuncu)+']</span> ' : '';
+        var notStr = k.not ? ' · <span style="color:#888;font-style:italic;">'+util.guvenliMetin(k.not)+'</span>' : '';
+        return '<span style="display:inline-block;padding:2px 9px;margin:2px 4px 2px 0;background:#f5f5ff;border:1px solid #e0d9ff;border-radius:12px;font-size:10px;font-weight:600;color:#444;">'+
+          '<strong style="color:#7c4dff;">'+k.zaman+'</strong> '+oyStr+
+          '<span style="color:'+ikonRenk+';font-weight:900;">'+ikon+'</span>'+
+          notStr+
+        '</span>';
+      }).join('');
+
+      html += '<div style="margin-bottom:14px;padding:12px;background:#fff;border:1px solid #e0d9ff;border-radius:8px;page-break-inside:avoid;">'+
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px;">'+
+          '<div style="display:flex;align-items:center;gap:8px;">'+
+            '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+pRenk+';"></span>'+
+            '<strong style="font-size:12px;color:#12102a;">'+util.guvenliMetin(paramAdi)+'</strong>'+
+          '</div>'+
+          '<div style="font-size:10px;color:#666;">'+
+            '<strong style="color:#12102a;">'+pd.basarili+'/'+pd.toplam+'</strong> pozisyon · '+
+            '<span style="color:'+pYuzdeRenk+';font-weight:800;">%'+pYuzde+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<img src="'+grafikImg+'" style="width:100%;display:block;margin-bottom:6px;border-radius:4px;border:1px solid #f0f0f0;">'+
+        '<div style="line-height:1.7;">'+listeHTML+'</div>'+
+      '</div>';
+    });
+
+    // Sporcu bazlı özet tablo
+    var sporcuAdlari = Object.keys(sporcuMap).sort(function(a,b){
+      var ya = sporcuMap[a].filter(function(x){return x.basarili;}).length / sporcuMap[a].length;
+      var yb = sporcuMap[b].filter(function(x){return x.basarili;}).length / sporcuMap[b].length;
+      return yb - ya;
+    });
+
+    if(sporcuAdlari.length){
+      html += '<div class="bolum-baslik"><span>👥 Sporcu Performansları</span><span class="bolum-baslik-alt">'+sporcuAdlari.length+' sporcu</span></div>';
+      html += '<table><thead><tr><th style="width:32px;text-align:center;">#</th><th style="width:34%;">Sporcu</th><th style="text-align:center;width:14%;">Pozisyon</th><th style="text-align:center;width:14%;">Başarılı</th><th style="text-align:center;width:14%;">Başarısız</th><th style="text-align:center;width:22%;">Verimlilik</th></tr></thead><tbody>';
+      sporcuAdlari.forEach(function(ad, i){
+        var sk = sporcuMap[ad];
+        var sTop = sk.length;
+        var sBas = sk.filter(function(x){return x.basarili;}).length;
+        var sYuz = sTop ? Math.round(sBas/sTop*100) : 0;
+        var sRenk = sYuz>=70?'#00a854':sYuz>=50?'#ff9100':'#d50000';
+        html += '<tr>'+
+          '<td style="text-align:center;font-weight:800;color:#7c4dff;">'+(i+1)+'</td>'+
+          '<td style="font-weight:600;">'+util.guvenliMetin(ad)+'</td>'+
+          '<td style="text-align:center;">'+sTop+'</td>'+
+          '<td style="text-align:center;color:#00a854;font-weight:700;">'+sBas+'</td>'+
+          '<td style="text-align:center;color:#d50000;font-weight:700;">'+(sTop-sBas)+'</td>'+
+          '<td style="text-align:center;"><div style="display:inline-block;width:70px;height:9px;background:#eee;border-radius:5px;overflow:hidden;vertical-align:middle;"><div style="width:'+sYuz+'%;height:100%;background:'+sRenk+';"></div></div><span style="margin-left:6px;font-weight:700;color:'+sRenk+';font-size:10px;">%'+sYuz+'</span></td>'+
+        '</tr>';
+      });
+      html += '</tbody></table>';
+    }
+
+    // Sporcu bazlı detay (her sporcu için parametre grafiği)
+    sporcuAdlari.forEach(function(ad){
+      var sk = sporcuMap[ad];
+      var sTop = sk.length;
+      var sBas = sk.filter(function(x){return x.basarili;}).length;
+      var sYuz = sTop ? Math.round(sBas/sTop*100) : 0;
+      var sRenk = sYuz>=70?'#00a854':sYuz>=50?'#ff9100':'#d50000';
+
+      var sParamMap = {};
+      sk.forEach(function(k){
+        if(!sParamMap[k.parametre]) sParamMap[k.parametre] = [];
+        sParamMap[k.parametre].push(k);
+      });
+
+      var sParamSirali = Object.keys(sParamMap).sort(function(a,b){return sParamMap[b].length - sParamMap[a].length;});
+
+      html += '<div class="bolum-baslik" style="page-break-before:auto;margin-top:14px;"><span>👤 '+util.guvenliMetin(ad)+'</span><span class="bolum-baslik-alt">'+sTop+' pozisyon · %'+sYuz+'</span></div>';
+
+      sParamSirali.forEach(function(paramAdi){
+        var pk = sParamMap[paramAdi].slice().sort(function(a,b){return (a.saniye||0)-(b.saniye||0);});
+        var pTop = pk.length;
+        var pBas = pk.filter(function(k){return k.basarili;}).length;
+        var pYuz = pTop ? Math.round(pBas/pTop*100) : 0;
+        var pYuzRenk = pYuz>=70?'#00a854':pYuz>=50?'#ff9100':'#d50000';
+        var pRenk = '#7c4dff';
+        var pc = state.parametreler.filter(function(x){return x.ad === paramAdi;})[0];
+        if(pc && pc.renk) pRenk = pc.renk;
+
+        var grafikImg = grafik.zamanSerisiCiz(pk, {renk: pRenk, genislik: 660, yukseklik: 90});
+
+        var listeHTML = pk.map(function(k){
+          var ikon = k.basarili ? '✓' : '✗';
+          var ikonRenk = k.basarili ? '#00a854' : '#d50000';
+          return '<span style="display:inline-block;padding:2px 8px;margin:2px 3px 2px 0;background:#f5f5ff;border:1px solid #e0d9ff;border-radius:12px;font-size:9.5px;font-weight:600;color:#444;"><strong style="color:#7c4dff;">'+k.zaman+'</strong> <span style="color:'+ikonRenk+';font-weight:900;">'+ikon+'</span></span>';
+        }).join('');
+
+        html += '<div style="margin-bottom:10px;padding:10px;background:#fafaff;border:1px solid #ece8ff;border-radius:8px;page-break-inside:avoid;">'+
+          '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:6px;">'+
+            '<div style="display:flex;align-items:center;gap:6px;">'+
+              '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+pRenk+';"></span>'+
+              '<strong style="font-size:11px;color:#12102a;">'+util.guvenliMetin(paramAdi)+'</strong>'+
+            '</div>'+
+            '<div style="font-size:9.5px;color:#666;">'+
+              '<strong style="color:#12102a;">'+pBas+'/'+pTop+'</strong> · '+
+              '<span style="color:'+pYuzRenk+';font-weight:800;">%'+pYuz+'</span>'+
+            '</div>'+
+          '</div>'+
+          '<img src="'+grafikImg+'" style="width:100%;display:block;margin-bottom:5px;border-radius:4px;border:1px solid #f0f0f0;">'+
+          '<div style="line-height:1.6;">'+listeHTML+'</div>'+
+        '</div>';
+      });
+    });
+
+    html += '</div>';
+    return html;
+  },
   tumMaclarRaporu:function(){
     if(!state.maclar.length){toast.goster('Uyarı','Arşivde maç yok.','uyari');return;}
     var tarih = new Date().toLocaleDateString('tr-TR',{day:'2-digit',month:'long',year:'numeric'});
@@ -1612,16 +1993,27 @@ var pdfRapor = {
     var verimlilikSeri = {ad:'Maç Verimliliği', renk:'#7c4dff', degerler:macOzetleri.slice().reverse().map(function(m){return m.verimlilik;}), indeksler:macOzetleri.map(function(_,i){return i;})};
     var grafikImg = grafik.dataURL({noktalar:noktalar, seriler:[verimlilikSeri]}, {arkaplan:'#ffffff',gridRenk:'rgba(0,0,0,0.08)'}, 900, 300);
     var html = '<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Tüm Maçlar Raporu — '+state.maclar.length+' maç</title>'+pdfRapor.pdfStilleri()+'</head><body><div class="page">';
-    html += '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">Tüm Maçlar Raporu</div><div class="header-alt">Maç Analiz Sistemi v3.3.1</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">'+state.maclar.length+' maç · '+macOzetleri.reduce(function(t,m){return t+m.kayitSayisi;},0)+' kayıt</div></div></div>';
+    html += '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">Tüm Maçlar Raporu</div><div class="header-alt">Maç Analiz Sistemi v3.3.2</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">'+state.maclar.length+' maç · '+macOzetleri.reduce(function(t,m){return t+m.kayitSayisi;},0)+' kayıt</div></div></div>';
     html += '<div class="ozet" style="grid-template-columns:repeat(4,1fr);"><div class="ozet-kart"><div class="ozet-etiket">Toplam Maç</div><div class="ozet-deger">'+state.maclar.length+'</div><div class="ozet-alt">arşivde</div></div><div class="ozet-kart"><div class="ozet-etiket">Toplam Pozisyon</div><div class="ozet-deger">'+genelToplam+'</div><div class="ozet-alt">tüm kayıtlar</div></div><div class="ozet-kart yesil"><div class="ozet-etiket">Genel Verimlilik</div><div class="ozet-deger yesil">%'+genelVerimlilik+'</div><div class="ozet-alt">başarı oranı</div></div><div class="ozet-kart turuncu"><div class="ozet-etiket">Ort. Verimlilik</div><div class="ozet-deger">%'+ortVerimlilik+'</div><div class="ozet-alt">maç başına</div></div></div>';
     html += '<div class="bolum-baslik"><span>📈 Maç Bazlı Verimlilik Grafiği</span><span class="bolum-baslik-alt">'+state.maclar.length+' maç · kronolojik</span></div><div class="grafik-kapsa"><img src="'+grafikImg+'" alt="Maç Grafiği" style="width:100%;max-width:800px;"></div>';
     html += '<div class="bolum-baslik"><span>👥 Sporcu Karşılaştırma Tablosu</span><span class="bolum-baslik-alt">takımlara göre gruplandı</span></div>';
     html += (sporcuListesi.length ? pdfRapor.sporcuTakimTablosu(sporcuListesi) : '<p style="color:#888;font-style:italic;">Sporcu bazlı kayıt bulunmuyor.</p>');
-    html += '<div class="bolum-baslik"><span>📚 Maç Listesi</span><span class="bolum-baslik-alt">en yeniden en eskiye</span></div><table><thead><tr><th style="width:80px;">Tarih</th><th>Maç</th><th style="text-align:center;width:60px;">Kayıt</th><th style="text-align:center;width:60px;">Pozisyon</th><th style="text-align:center;width:60px;">Başarılı</th><th style="text-align:center;width:70px;">Verimlilik</th></tr></thead><tbody>';
+    html += '<div class="bolum-baslik"><span>📚 Maç Listesi</span><span class="bolum-baslik-alt">detaylar sonraki sayfalarda</span></div><table><thead><tr><th style="width:80px;">Tarih</th><th>Maç</th><th style="text-align:center;width:60px;">Kayıt</th><th style="text-align:center;width:60px;">Pozisyon</th><th style="text-align:center;width:60px;">Başarılı</th><th style="text-align:center;width:70px;">Verimlilik</th></tr></thead><tbody>';
     macOzetleri.forEach(function(m){var renk = m.verimlilik>=70?'#00a854':m.verimlilik>=50?'#ff9100':'#d50000';var isim = util.guvenliMetin(m.mac.isim||'İsimsiz') + (m.mac.rakip?' — vs '+util.guvenliMetin(m.mac.rakip):'');html += '<tr><td style="font-family:monospace;font-size:11px;color:#666;">'+util.tarihFormatla(m.mac.tarih||m.mac.olusturmaTarihi)+'</td><td>'+isim+'</td><td style="text-align:center;">'+m.kayitSayisi+'</td><td style="text-align:center;">'+m.toplam+'</td><td style="text-align:center;color:#00a854;font-weight:700;">'+m.basarili+'</td><td style="text-align:center;color:'+renk+';font-weight:700;">%'+m.verimlilik+'</td></tr>';});
     html += '</tbody></table>';
     html += '<div class="footer"><div><div style="font-weight:700;color:#555;">Maç Performans Analiz Sistemi</div><div class="sayfa-num">Rapor No: RPT-'+Date.now().toString(36).toUpperCase()+'</div><div class="sayfa-num">Oluşturma: '+new Date().toLocaleString('tr-TR')+'</div></div><div class="imza">Antrenör İmza</div></div>';
-    html += '</div><script>window.onload=function(){setTimeout(function(){window.print();},400);};<\/script></body></html>';
+    html += '</div>';
+
+    /* ⬇⬇⬇ YENİ: Her maç için detay sayfası (en yeniden en eskiye) ⬇⬇⬇ */
+    var macDetaySayfalari = '';
+    var toplamMac = macOzetleri.length;
+    macOzetleri.forEach(function(m, idx){
+      var macNo = toplamMac - idx;
+      macDetaySayfalari += pdfRapor.macDetayTumSayfasi(m.mac, macNo);
+    });
+
+    html += macDetaySayfalari;
+    html += '<script>window.onload=function(){setTimeout(function(){window.print();},500);};<\/script></body></html>';
     this.acPencere(html);
   },
   sporcuTakimTablosu:function(sporcuListesi){
@@ -1751,36 +2143,37 @@ var pdfRapor = {
     '.header{border-bottom:3px solid #7c4dff;padding-bottom:12px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}'+
     '.header-logo{display:flex;align-items:center;gap:10px;}'+
     '.header-logo .logo{width:40px;height:40px;background:linear-gradient(135deg,#7c4dff,#b388ff);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:800;}'+
-    '.header-baslik{font-size:16px;font-weight:800;color:#12102a;line-height:1.3;}'+
-    '.header-alt{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:700;line-height:1.35;}'+
-    '.header-tarih{font-size:10px;color:#888;font-family:monospace;line-height:1.4;}'+
+    '.header-baslik{font-size:16px;font-weight:800;color:#12102a;line-height:1.1;}'+
+    '.header-alt{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:700;}'+
+    '.header-tarih{font-size:10px;color:#888;font-family:monospace;}'+
     '.ozet{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}'+
-    '.ozet-kart{padding:12px 12px 14px;background:#f8f6ff;border:1px solid #e0d9ff;border-radius:8px;border-top:3px solid #7c4dff;display:flex;flex-direction:column;justify-content:flex-start;overflow:visible;}'+
+    '.ozet-kart{padding:12px;background:#f8f6ff;border:1px solid #e0d9ff;border-radius:8px;border-top:3px solid #7c4dff;}'+
     '.ozet-kart.yesil{background:#f0faf5;border-color:#b6e8cf;border-top-color:#00a854;}'+
     '.ozet-kart.turuncu{background:#fff6ed;border-color:#ffdcb6;border-top-color:#ff9100;}'+
-    '.ozet-etiket{font-size:9px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:.5px;line-height:1.35;padding-bottom:1px;}'+
-    '.ozet-deger{font-size:22px;font-weight:800;color:#12102a;line-height:1.3;margin:6px 0 5px;padding-bottom:2px;}'+
+    '.ozet-etiket{font-size:9px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:.5px;}'+
+    '.ozet-deger{font-size:22px;font-weight:800;color:#12102a;line-height:1;margin:4px 0 2px;}'+
     '.ozet-deger.yesil{color:#00a854;}'+
-    '.ozet-alt{font-size:9px;color:#888;line-height:1.45;padding-bottom:1px;}'+
-    '.bolum-baslik{font-size:13px;font-weight:800;color:#12102a;margin:16px 0 8px;padding-left:10px;border-left:4px solid #7c4dff;display:flex;align-items:center;justify-content:space-between;line-height:1.4;}'+
+    '.ozet-alt{font-size:9px;color:#888;}'+
+    '.bolum-baslik{font-size:13px;font-weight:800;color:#12102a;margin:16px 0 8px;padding-left:10px;border-left:4px solid #7c4dff;display:flex;align-items:center;justify-content:space-between;}'+
     '.bolum-baslik-alt{font-size:10px;color:#888;font-weight:600;}'+
     '.grafik-kapsa{background:#fff;border:1px solid #e0d9ff;border-radius:8px;padding:10px;margin-bottom:16px;text-align:center;}'+
     '.grafik-kapsa img{max-width:100%;height:auto;display:block;margin:0 auto;}'+
     'table{width:100%;border-collapse:collapse;font-size:10.5px;margin-bottom:14px;table-layout:fixed;}'+
     'table thead th{background:#f5f0ff;color:#4a2eb3;padding:8px 6px;text-align:left;font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #7c4dff;word-break:break-word;}'+
-    'table tbody td{padding:8px 6px;border-bottom:1px solid #eee;word-break:break-word;overflow-wrap:break-word;line-height:1.5;vertical-align:middle;}'+
+    'table tbody td{padding:7px 6px;border-bottom:1px solid #eee;word-break:break-word;overflow-wrap:break-word;}'+
     'table tbody tr:nth-child(even){background:#fafafa;}'+
     'table tbody tr:last-child td{border-bottom:none;}'+
     '.footer{margin-top:20px;padding-top:12px;border-top:2px solid #eee;display:flex;justify-content:space-between;align-items:flex-end;font-size:9px;color:#999;}'+
     '.imza{width:150px;border-top:1px solid #333;padding-top:4px;text-align:center;color:#555;font-weight:600;}'+
     '.sayfa-num{font-family:monospace;}'+
+    '@media print{.page{page-break-after:always;}.page:last-child{page-break-after:auto;}}'+
     '</style>';
   },
   pdfCerceve:function(baslik, mac, r, grafikImg, grafikVeri, tarih){
     var paramKeys = Object.keys(r.map).sort(function(a,b){return r.map[b].toplam - r.map[a].toplam;});
     var sporcuKeys = Object.keys(r.sporcuMap).sort(function(a,b){var va = r.sporcuMap[a].toplam?r.sporcuMap[a].basarili/r.sporcuMap[a].toplam:0;var vb = r.sporcuMap[b].toplam?r.sporcuMap[b].basarili/r.sporcuMap[b].toplam:0;return vb-va;});
     var html = '<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>'+baslik+' — '+(mac.isim||'İsimsiz')+'</title>'+this.pdfStilleri()+'</head><body><div class="page">';
-    html += '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">'+baslik+'</div><div class="header-alt">Maç Analiz Sistemi v3.3.1</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">'+util.zamanFormatla(state.saniye,'mm:ss')+' · '+state.yari+'. Yarı</div></div></div>';
+    html += '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">'+baslik+'</div><div class="header-alt">Maç Analiz Sistemi v3.3.2</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">'+util.zamanFormatla(state.saniye,'mm:ss')+' · '+state.yari+'. Yarı</div></div></div>';
     html += '<div style="padding:14px;background:linear-gradient(135deg,#f5f0ff,#f0faf5);border:1px solid #7c4dff;border-radius:10px;margin-bottom:16px;"><div style="font-size:20px;font-weight:800;color:#12102a;line-height:1.1;">'+util.guvenliMetin(mac.isim||'İsimsiz Maç')+'</div><div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:#555;font-weight:600;">'+(mac.rakip?'<span>🆚 '+util.guvenliMetin(mac.rakip)+'</span>':'')+(mac.oyuncu?'<span>👤 '+util.guvenliMetin(mac.oyuncu)+'</span>':'')+'<span>📅 '+util.tarihFormatla(mac.tarih||mac.olusturmaTarihi)+'</span><span>⏱️ '+util.zamanFormatla(state.saniye,'mm:ss')+'</span></div></div>';
     html += '<div class="ozet"><div class="ozet-kart"><div class="ozet-etiket">Toplam Kayıt</div><div class="ozet-deger">'+(mac.kayitlar||[]).length+'</div><div class="ozet-alt">tüm pozisyonlar</div></div><div class="ozet-kart"><div class="ozet-etiket">Pozisyon</div><div class="ozet-deger">'+r.toplam+'</div><div class="ozet-alt">'+r.basarili+' başarılı</div></div><div class="ozet-kart yesil"><div class="ozet-etiket">Verimlilik</div><div class="ozet-deger yesil">%'+r.verimlilik+'</div><div class="ozet-alt">ort. başarı</div></div><div class="ozet-kart turuncu"><div class="ozet-etiket">Parametre Çeşidi</div><div class="ozet-deger">'+paramKeys.length+'</div><div class="ozet-alt">kullanılan</div></div></div>';
     html += '<div class="bolum-baslik"><span>📈 Zaman Bazlı Parametre Gelişimi</span><span class="bolum-baslik-alt">maç boyunca</span></div><div class="grafik-kapsa"><img src="'+grafikImg+'" alt="Grafik" style="width:100%;max-width:800px;">'+(grafikVeri.seriler.length?'<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid #eee;justify-content:center;">'+grafikVeri.seriler.map(function(s,i){var renk = s.renk||grafik.RENKLER[i%grafik.RENKLER.length];return '<span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#444;font-weight:600;"><span style="width:14px;height:3px;border-radius:2px;background:'+renk+';"></span>'+util.guvenliMetin(s.ad)+'</span>';}).join('')+'</div>':'')+'</div>';
@@ -1839,16 +2232,28 @@ var pdf = {
     var gelisimRenk = v.gelisim>0?'#00a854':v.gelisim<0?'#d50000':'#666';
     var gelisimOk = v.gelisim>0?'▲':(v.gelisim<0?'▼':'●');
     var donemEtiket = sporcuVeri.donemEtiketi();
-    return '<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Sporcu Raporu — '+util.guvenliMetin(o.ad)+'</title>'+pdfRapor.pdfStilleri()+'<style>.profil{display:flex;align-items:center;gap:16px;padding:14px;background:linear-gradient(135deg,#f5f0ff,#f0faf5);border:1px solid #7c4dff;border-radius:10px;margin-bottom:16px;}.profil-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#7c4dff,#4a2eb3);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff;flex-shrink:0;}.profil-bilgi{flex:1;min-width:0;}.profil-ad{font-size:22px;font-weight:800;color:#12102a;line-height:1.3;letter-spacing:-.5px;padding-bottom:2px;}.profil-detay{margin-top:6px;display:flex;gap:10px;flex-wrap:wrap;font-size:10px;color:#555;font-weight:600;}.profil-detay .tag{padding:3px 10px;background:#fff;border:1px solid #ddd;border-radius:20px;}.profil-detay .tag.no{background:#7c4dff;color:#fff;border-color:#7c4dff;font-family:monospace;}.rozet-gelisim{display:inline-flex;align-items:center;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:800;color:#fff;background:'+gelisimRenk+';line-height:1.45;}</style>'+
+
+    /* ⬇ Her maç için ayrı sayfa üret ⬇ */
+    var macSayfalari = '';
+    var macListesi = v.maclar.slice().reverse();
+    macListesi.forEach(function(mv, idx){
+      macSayfalari += pdfRapor.macSayfasiOlustur(mv, macListesi.length - idx, o.ad);
+    });
+
+    return '<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Sporcu Raporu — '+util.guvenliMetin(o.ad)+'</title>'+
+    pdfRapor.pdfStilleri()+
+    '<style>.profil{display:flex;align-items:center;gap:16px;padding:14px;background:linear-gradient(135deg,#f5f0ff,#f0faf5);border:1px solid #7c4dff;border-radius:10px;margin-bottom:16px;}.profil-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#7c4dff,#4a2eb3);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff;flex-shrink:0;}.profil-bilgi{flex:1;min-width:0;}.profil-ad{font-size:22px;font-weight:800;color:#12102a;line-height:1.1;letter-spacing:-.5px;}.profil-detay{margin-top:6px;display:flex;gap:10px;flex-wrap:wrap;font-size:10px;color:#555;font-weight:600;}.profil-detay .tag{padding:3px 10px;background:#fff;border:1px solid #ddd;border-radius:20px;}.profil-detay .tag.no{background:#7c4dff;color:#fff;border-color:#7c4dff;font-family:monospace;}.rozet-gelisim{display:inline-block;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:800;color:#fff;background:'+gelisimRenk+';}</style>'+
     '</head><body><div class="page">'+
-    '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">Sporcu Performans Raporu</div><div class="header-alt">Maç Analiz Sistemi v3.3.1</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">Dönem: '+donemEtiket+'</div></div></div>'+
+    '<div class="header"><div class="header-logo"><div class="logo">⚽</div><div><div class="header-baslik">Sporcu Performans Raporu</div><div class="header-alt">Maç Analiz Sistemi v3.3.2</div></div></div><div style="text-align:right;"><div class="header-tarih">'+tarih+'</div><div class="header-tarih">Dönem: '+donemEtiket+'</div></div></div>'+
     '<div class="profil"><div class="profil-avatar">'+(o.ad||'?').charAt(0).toUpperCase()+'</div><div class="profil-bilgi"><div class="profil-ad">'+util.guvenliMetin(o.ad)+'</div><div class="profil-detay">'+(o.no?'<span class="tag no">#'+o.no+'</span>':'')+(o.mevki?'<span class="tag">'+mevkiAd+'</span>':'')+(o.takim?'<span class="tag">🏆 '+util.guvenliMetin(o.takim)+'</span>':'')+(takimRank?'<span class="tag" style="background:'+takimRankRenk+';color:#fff;border-color:'+takimRankRenk+';font-weight:800;">'+takimRank+'</span>':'')+'</div></div><div style="text-align:right;"><div style="font-size:9px;color:#888;font-weight:700;text-transform:uppercase;">Gelişim</div><div class="rozet-gelisim">'+gelisimOk+' '+(v.gelisim>0?'+':'')+v.gelisim+'%</div></div></div>'+
     '<div class="ozet"><div class="ozet-kart"><div class="ozet-etiket">Toplam Maç</div><div class="ozet-deger">'+v.macSayisi+'</div><div class="ozet-alt">'+donemEtiket+'</div></div><div class="ozet-kart"><div class="ozet-etiket">Pozisyon</div><div class="ozet-deger">'+v.toplamPozisyon+'</div><div class="ozet-alt">'+v.basariliPozisyon+' başarılı</div></div><div class="ozet-kart yesil"><div class="ozet-etiket">Verimlilik</div><div class="ozet-deger yesil">%'+v.verimlilik+'</div><div class="ozet-alt">ortalama başarı</div></div><div class="ozet-kart turuncu"><div class="ozet-etiket">Parametre</div><div class="ozet-deger">'+paramKeys.length+'</div><div class="ozet-alt">farklı metrik</div></div></div>'+
-    '<div class="bolum-baslik"><span>📈 Parametre Bazlı Gelişim Grafiği</span><span class="bolum-baslik-alt">'+v.macSayisi+' maç</span></div><div class="grafik-kapsa"><img src="'+grafikImg+'" alt="Gelişim Grafiği" style="width:100%;max-width:800px;">'+(grafikVeri.seriler.length?'<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid #eee;justify-content:center;">'+grafikVeri.seriler.map(function(s,i){var renk = s.renk||grafik.RENKLER[i%grafik.RENKLER.length];return '<span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#444;font-weight:600;"><span style="width:14px;height:3px;border-radius:2px;background:'+renk+';"></span>'+util.guvenliMetin(s.ad)+'</span>';}).join('')+'</div>':'')+'</div>'+
-    '<div class="bolum-baslik"><span>📋 Parametre Detayları</span><span class="bolum-baslik-alt">'+paramKeys.length+' parametre</span></div><table><thead><tr><th style="width:28%;">Parametre</th><th style="text-align:center;width:12%;">Toplam</th><th style="text-align:center;width:12%;">Başarılı</th><th style="text-align:center;width:12%;">Başarısız</th><th style="text-align:center;width:24%;">Başarı Oranı</th><th style="text-align:center;width:12%;">Trend</th></tr></thead><tbody>'+paramSatirlari+'</tbody></table>'+
-    '<div class="bolum-baslik"><span>🏟️ Maç Bazlı Performans</span><span class="bolum-baslik-alt">en yeniden en eskiye</span></div><table><thead><tr><th style="width:80px;">Tarih</th><th>Maç</th><th style="text-align:center;width:60px;">Pozisyon</th><th style="text-align:center;width:60px;">Başarılı</th><th style="text-align:center;width:70px;">Verimlilik</th></tr></thead><tbody>'+macSatirlari+'</tbody></table>'+
+    '<div class="bolum-baslik"><span>📈 Genel Gelişim Grafiği</span><span class="bolum-baslik-alt">'+v.macSayisi+' maç · tüm parametreler</span></div><div class="grafik-kapsa"><img src="'+grafikImg+'" alt="Gelişim Grafiği" style="width:100%;max-width:800px;">'+(grafikVeri.seriler.length?'<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid #eee;justify-content:center;">'+grafikVeri.seriler.map(function(s,i){var renk = s.renk||grafik.RENKLER[i%grafik.RENKLER.length];return '<span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#444;font-weight:600;"><span style="width:14px;height:3px;border-radius:2px;background:'+renk+';"></span>'+util.guvenliMetin(s.ad)+'</span>';}).join('')+'</div>':'')+'</div>'+
+    '<div class="bolum-baslik"><span>📋 Parametre Özeti</span><span class="bolum-baslik-alt">'+paramKeys.length+' parametre</span></div><table><thead><tr><th style="width:28%;">Parametre</th><th style="text-align:center;width:12%;">Toplam</th><th style="text-align:center;width:12%;">Başarılı</th><th style="text-align:center;width:12%;">Başarısız</th><th style="text-align:center;width:24%;">Başarı Oranı</th><th style="text-align:center;width:12%;">Trend</th></tr></thead><tbody>'+paramSatirlari+'</tbody></table>'+
+    '<div class="bolum-baslik"><span>🏟️ Maç Geçmişi</span><span class="bolum-baslik-alt">detaylar sonraki sayfalarda</span></div><table><thead><tr><th style="width:80px;">Tarih</th><th>Maç</th><th style="text-align:center;width:60px;">Pozisyon</th><th style="text-align:center;width:60px;">Başarılı</th><th style="text-align:center;width:70px;">Verimlilik</th></tr></thead><tbody>'+macSatirlari+'</tbody></table>'+
     '<div class="footer"><div><div style="font-weight:700;color:#555;">Maç Performans Analiz Sistemi</div><div class="sayfa-num">Rapor No: RPT-'+Date.now().toString(36).toUpperCase()+'</div><div class="sayfa-num">Oluşturma: '+new Date().toLocaleString('tr-TR')+'</div></div><div class="imza">Antrenör İmza</div></div>'+
-    '</div><script>window.onload=function(){setTimeout(function(){window.print();},400);};<\/script></body></html>';
+    '</div>'+
+    macSayfalari+
+    '<script>window.onload=function(){setTimeout(function(){window.print();},500);};<\/script></body></html>';
   }
 };
 
